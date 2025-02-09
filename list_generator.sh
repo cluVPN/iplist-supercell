@@ -1,11 +1,11 @@
 #!/bin/bash
 
-aria2c -o youtubeparsed --allow-overwrite \
-  'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed'
+aria2c -o supercell --allow-overwrite \
+  'https://raw.githubusercontent.com/cluVPN/rule-set/refs/heads/main/supercell'
 
-echo "$(grep -oP '^([\w\d.-]+\.)+([\w\d.-]+)?' youtubeparsed)" > youtubeparsed
+echo "$(grep -oP '^([\w\d.-]+\.)+([\w\d.-]+)?' supercell)" > supercell
 
-parallel -P "$(nproc)" -j0 -a youtubeparsed '\
+parallel -P "$(nproc)" -j0 -a supercell '\
 line="{}"
 dig +short A $line | grep -v "\.$" >> ipv4_list.txt
 dig +short AAAA $line | grep -v "\.$" >> ipv6_list.txt
