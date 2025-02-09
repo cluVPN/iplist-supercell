@@ -50,6 +50,7 @@ jobs:
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
           git config --local user.name 'touhidurrr'
+          git add ipv?_list.txt cidr?.txt
           git commit -m 'Updated Lists [Automated]'
           git pull
           git push
