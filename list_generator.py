@@ -88,12 +88,12 @@ def read_ips(
 
   return list(ipv4Set), list(ipv6Set)
 
-# download youtubeparsed
+# download supercell
 
 
-def download_youtubeparsed():
-  url = 'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed'
-  download(url, 'youtubeparsed')
+def download_supercell():
+  url = 'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/supercell'
+  download(url, 'supercell')
 
 
 def get_coroutines(
@@ -103,8 +103,8 @@ def get_coroutines(
   # make a list of threads
   coroutines = []
 
-  # open the youtubeparsed file
-  with open('youtubeparsed', mode='r', encoding='utf-8') as f:
+  # open the supercell file
+  with open('supercell', mode='r', encoding='utf-8') as f:
 
     # for each url in the file
     for url in f.readlines():
@@ -153,8 +153,8 @@ async def main():
   previousIpv4s = len(ipv4List)
   previousIpv6s = len(ipv6List)
 
-  # download youtubeparsed
-  download_youtubeparsed()
+  # download supercell
+  download_supercell()
 
   # get ip fetcher
   ip_fetcher = get_ip_fetcher()
