@@ -9,6 +9,7 @@ with open("cidr6.txt", "r") as f:
 
 # Формируем JSON в формате ip_cidr
 singbox_rules = {
+    "version": 2,
     "rules": [
         {"ip_cidr": cidr} for cidr in ipv4_cidrs + ipv6_cidrs
     ]
