@@ -11,7 +11,6 @@ with open("cidr6.txt", "r") as f:
 singbox_rules = {
     "rules": [
         {"ip_cidr": cidr} for cidr in ipv4_cidrs + ipv6_cidrs
-        }
     ]
 }
 
