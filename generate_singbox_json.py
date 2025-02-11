@@ -16,5 +16,5 @@ singbox_rules = {
 }
 
 # Сохраняем в JSON-файл
-with open("singbox_rules.json", "w") as f:
+with open("supercell.json", "w") as f:
     json.dump(singbox_rules, f, indent=4)
