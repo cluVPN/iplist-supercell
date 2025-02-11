@@ -54,14 +54,14 @@ jobs:
       - name: Download Latest Sing-box
         run: |
           SINGBOX_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-          wget -O sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-${SINGBOX_VERSION}-linux-amd64.tar.gz
+          wget -O sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-v${SINGBOX_VERSION}-linux-amd64.tar.gz
           tar -xzf sing-box.tar.gz
           chmod +x sing-box-${SINGBOX_VERSION}-linux-amd64/sing-box
 
       - name: Compile JSON Rules with Sing-box
         run: |
           SINGBOX_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-          ./sing-box-${SINGBOX_VERSION}-linux-amd64/sing-box rule-set compile --output supercell.srs "supercell.json"
+          ./sing-box-v${SINGBOX_VERSION}-linux-amd64/sing-box rule-set compile --output supercell.srs "supercell.json"
 
       - name: Commit changes
         run: |
