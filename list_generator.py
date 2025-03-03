@@ -92,7 +92,7 @@ def read_ips(
 
 
 def download_supercell():
-  url = 'https://raw.githubusercontent.com/cluVPN/rule-set/refs/heads/main/supercell'
+  url = 'https://raw.githubusercontent.com/cluVPN/iplist-supercell/refs/heads/main/supercell'
   download(url, 'supercell')
 
 
