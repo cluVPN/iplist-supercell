@@ -8,8 +8,6 @@ on:
       - 'dns_resolvers.yml'
       - '.github/workflows/update_lists.yml'
   workflow_dispatch:
-  schedule:
-    - cron: "*/5 * * * *"
 
 jobs:
   update-lists:
